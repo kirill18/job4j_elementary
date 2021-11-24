@@ -19,7 +19,7 @@ public class Converter {
 
         float in = 140;
         float expectedEur = 2;
-        float expectedUsd = (float) 2.3333333;
+        float expectedUsd = 2.3333333f;
         float outEur = Converter.rubleToEuro(in);
         float outUsd = Converter.rubleToDollar(in);
         boolean passedEur = expectedEur == outEur;
