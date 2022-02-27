@@ -14,10 +14,10 @@ public class FitTest {
     }
 
     @Test
-    public void whenWoman165Then74dot75() {
-        short in = 165;
-        double expected = 74.75;
-        double out = Fit.manWeight(in);
+    public void whenWoman170Then69() {
+        short in = 170;
+        double expected = 69;
+        double out = Fit.womanWeight(in);
         Assert.assertEquals(expected, out, 0.01);
     }
 }
