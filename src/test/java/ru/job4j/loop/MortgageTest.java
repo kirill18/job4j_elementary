@@ -25,7 +25,7 @@ public class MortgageTest {
     }
 
     @Test
-    public void when6Year() {
+    public void when11Year() {
         int amount = 5300000;
         int salary = 684000;
         double percent = 6.1;
