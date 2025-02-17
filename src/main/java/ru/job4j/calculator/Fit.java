@@ -1,21 +1,34 @@
 package ru.job4j.calculator;
 
+import java.util.Scanner;
+
 public class Fit {
 
-    public static double manWeight(short height) {
-        return (height - 100) * 1.15;
+    private static final double COEFFICIENT = 1.15;
+    private static final int MAN_OFFSET = 100;
+    private static final int WOMAN_OFFSET = 110;
+
+    public static double manWeight(final short height) {
+        return (height - MAN_OFFSET) * COEFFICIENT;
     }
 
-    public static double womanWeight(short height) {
-        return (height - 110) * 1.15;
+    public static double womanWeight(final short height) {
+        return (height - WOMAN_OFFSET) * COEFFICIENT;
     }
 
     public static void main(String[] args) {
-        short height = 187;
-        double man = Fit.manWeight(height);
-        System.out.println("Man 187 is " + man);
-        height = 167;
-        double woman = Fit.womanWeight(height);
-        System.out.println("Woman 167 is " + woman);
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Введите рост мужчины (см): ");
+        short manHeight = scanner.nextShort();
+        double manWeight = manWeight(manHeight);
+        System.out.println("Идеальный вес мужчины при росте " + manHeight + " см: " + String.format("%.2f", manWeight) + " кг");
+
+        System.out.print("Введите рост женщины (см): ");
+        short womanHeight = scanner.nextShort();
+        double womanWeight = womanWeight(womanHeight);
+        System.out.println("Идеальный вес женщины при росте " + womanHeight + " см: " + String.format("%.2f", womanWeight) + " кг");
+
+        scanner.close();
     }
 }
