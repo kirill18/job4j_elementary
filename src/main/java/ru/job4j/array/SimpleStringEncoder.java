@@ -10,13 +10,17 @@ public class SimpleStringEncoder {
             } else {
                 if (counter > 1) {
                     result = (result + input.charAt(i)) + counter;
-                } else result = (result + input.charAt(i));
+                } else {
+                    result = (result + input.charAt(i));
+                }
                 counter = 1;
             }
         }
         if (counter > 1) {
-            result = (result + input.charAt(input.length() -1)) + counter;
-        } else result = result + input.charAt(input.length() - 1);
+            result = (result + input.charAt(input.length() - 1)) + counter;
+        } else {
+            result = result + input.charAt(input.length() - 1);
+        }
         return result;
     }
 }
